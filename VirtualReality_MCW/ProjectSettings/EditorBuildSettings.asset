@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 800ee344e4764e24081d68a09f400c43
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Claustraphobia.unity
     guid: 9da3a4bca91675545a9a4c07df5e7bb8
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
+    path: Assets/Scenes/Astraphobia.unity
     guid: c209d5ef20239804aa28787c7a700e37
+  - enabled: 1
+    path: Assets/Scenes/ASQuestions.unity
+    guid: 231a755a4430ae94583836a9f319b13c
   m_configObjects: {}
