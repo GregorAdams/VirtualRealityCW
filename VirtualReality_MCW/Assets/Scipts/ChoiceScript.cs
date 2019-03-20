@@ -12,8 +12,10 @@ public class ChoiceScript : MonoBehaviour
     public GameObject Choice03;
     public int ChoiceMade;
     public bool finalchoice;
+    private int total = 0;
     public void ChoiceOption1()
     {
+        ChoiceScript sc = new ChoiceScript();
         Question.GetComponent<Text>().text = "Current Score";
         Question.GetComponent<Text>().text ="How did room 2 make you feel?";
         finalchoice = false;
@@ -22,23 +24,14 @@ public class ChoiceScript : MonoBehaviour
             Question.GetComponent<Text>().text = "How did room 3 make you feel?";
             ChoiceMade = ChoiceMade + 1;
             finalchoice = true;
-        }
-        if (ChoiceMade >= 6)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 5 && ChoiceMade >=4)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 3)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have Astraphobia";
+            total++;
         }
         if (ChoiceMade == 0)
         {
             ChoiceMade = ChoiceMade + 1;
+            total++;
         }
+       FinalV();
     }
     public void ChoiceOption2()
     {
@@ -48,24 +41,16 @@ public class ChoiceScript : MonoBehaviour
             Question.GetComponent<Text>().text = "How did room 3 make you feel?";
             ChoiceMade = ChoiceMade + 2;
             finalchoice = true;
+            total++;
         }
-        if (ChoiceMade >= 6)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 5 && ChoiceMade >= 4)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 3)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have Astraphobia";
-        }
-
+  
         if (ChoiceMade == 0)
         {
             ChoiceMade = ChoiceMade + 2;
+            total++;
         }
+
+        FinalV();
     }
     public void ChoiceOption3()
     {
@@ -75,27 +60,32 @@ public class ChoiceScript : MonoBehaviour
             Question.GetComponent<Text>().text = "How did room 3 make you feel?";
             ChoiceMade = ChoiceMade + 3;
             finalchoice = true;
+            total++;
         }
-        if (ChoiceMade >= 6)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 5 && ChoiceMade >= 4)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have Astraphobia";
-        }
-        if (ChoiceMade <= 3)
-        {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have Astraphobia";
-        }
+
         if (ChoiceMade == 0)
         {
             ChoiceMade = ChoiceMade + 3;
+            total++;
         }
+
+        FinalV();
     }
     public void FinalV()
     {
-        return;
+        if (total >= 3 && ChoiceMade >=6)
+        {
+            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Astraphobia";
+        }
+        if (total == 3 && ChoiceMade <= 5 && ChoiceMade >= 4)
+        {
+            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have Astraphobia";
+        }
+        if (total == 3 && ChoiceMade <= 3)
+        {
+            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have Astraphobia";
+        }
+
     }
 
 
