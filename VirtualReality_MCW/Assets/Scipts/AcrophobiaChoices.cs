@@ -16,12 +16,12 @@ public class AcrophobiaChoices : MonoBehaviour
     public void ChoiceOption1()
     {
         AcrophobiaChoices sc = new AcrophobiaChoices();
-        Question.GetComponent<Text>().text = "Current Score";
-        Question.GetComponent<Text>().text ="How did room 2 make you feel?";
+        Question.GetComponent<Text>().text = "";
+        Question.GetComponent<Text>().text ="How did looking over the edge make you feel?";
         finalchoice = false;
         if (ChoiceMade >= 1)
         {
-            Question.GetComponent<Text>().text = "How did room 3 make you feel?";
+            Question.GetComponent<Text>().text = "How did walking out onto the bridges make you feel?";
             ChoiceMade = ChoiceMade + 1;
             finalchoice = true;
             total++;
@@ -35,10 +35,10 @@ public class AcrophobiaChoices : MonoBehaviour
     }
     public void ChoiceOption2()
     {
-        Question.GetComponent<Text>().text ="How did room 2 make you feel?";
+        Question.GetComponent<Text>().text = "How did looking over the edge make you feel?";
         if (ChoiceMade >= 1)
         {
-            Question.GetComponent<Text>().text = "How did room 3 make you feel?";
+            Question.GetComponent<Text>().text = "How did walking out onto the bridges make you feel?";
             ChoiceMade = ChoiceMade + 2;
             finalchoice = true;
             total++;
@@ -54,10 +54,10 @@ public class AcrophobiaChoices : MonoBehaviour
     }
     public void ChoiceOption3()
     {
-        Question.GetComponent<Text>().text ="How did room 2 make you feel?";
+        Question.GetComponent<Text>().text = "How did looking over the edge make you feel?";
         if (ChoiceMade >= 1)
         {
-            Question.GetComponent<Text>().text = "How did room 3 make you feel?";
+            Question.GetComponent<Text>().text = "How did walking out onto the bridges make you feel?";
             ChoiceMade = ChoiceMade + 3;
             finalchoice = true;
             total++;
@@ -73,7 +73,7 @@ public class AcrophobiaChoices : MonoBehaviour
     }
     public void FinalV()
     {
-        if (total >= 3 && ChoiceMade >=6)
+        if (total == 3 && ChoiceMade >=6)
         {
             Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Acrophobia";
         }

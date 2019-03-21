@@ -16,7 +16,7 @@ public class ChoiceScript : MonoBehaviour
     public void ChoiceOption1()
     {
         ChoiceScript sc = new ChoiceScript();
-        Question.GetComponent<Text>().text = "Current Score";
+        Question.GetComponent<Text>().text = "";
         Question.GetComponent<Text>().text ="How did room 2 make you feel?";
         finalchoice = false;
         if (ChoiceMade >= 1)
@@ -73,17 +73,17 @@ public class ChoiceScript : MonoBehaviour
     }
     public void FinalV()
     {
-        if (total >= 3 && ChoiceMade >=6)
+        if (total == 3 && ChoiceMade >=6)
         {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have Astraphobia";
+            Score.GetComponent<Text>().text = "Your score suggest that there is a strong possibility that you may have this phobia";
         }
         if (total == 3 && ChoiceMade <= 5 && ChoiceMade >= 4)
         {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have Astraphobia";
+            Score.GetComponent<Text>().text = "Your score suggest that there is a medium possibility that you may have this phobia";
         }
         if (total == 3 && ChoiceMade <= 3)
         {
-            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have Astraphobia";
+            Score.GetComponent<Text>().text = "Your score suggest that there is a low possibility that you may have this phobia";
         }
 
     }
